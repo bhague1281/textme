@@ -5,6 +5,6 @@ class MainController < ApplicationController
   def create
     easy = SMSEasy::Client.new
     easy.deliver(params[:phone_number], params[:mobile_carrier], params[:message])
-    render json: params
+    redirect_to root_path
   end
 end
